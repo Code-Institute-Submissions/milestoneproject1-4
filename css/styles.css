@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700|Exo:100,200,300,400,500,600,700');
+
+body, html {
+    height: 100%;
+}
+
+/*Background Image*/
+.bg-img {
+    background-image: url("../assets/images/FI8A7224-Edit.jpg");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    left: 0;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+    color: #36454F;
+    text-transform: uppercase;
+    padding-top:264px;
+    font-size: 38px;
+    letter-spacing: 10px;
+    font-family: "Exo", sans-serif;
+}
+
+.specs {
+    position: absolute;
+    left: 0;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+    color: #36454F;
+    text-transform: uppercase;
+    padding-top: 357px;
+    font-size: 28px;
+    letter-spacing: 10px;
+    font-family: "Exo", sans-serif;
+}
+
+
+
+
+
+
+/*navigation*/
+.navbar ul li a {
+    color: #fafafa;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-family: "Exo", sans-serif;
+}
+
+.navbar-right {
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.navbar ul li a:hover {
+    color: #36454F;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-family: "Exo", sans-serif;
+    background-color: transparent;
+}
+
+
+/*footer*/
+footer {
+    position: absolute;
+    top: 90%;
+    width: 100%;
+    color: #fafafa;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: "Exo", sans-serif;
+}
+
+.copyright-details {
+    padding-top:104px;
+    font-size: 11px;
+    font-family: "Exo", sans-serif;
+    text-align: right;
+}
+
+.social-links i {
+    padding-top: 80px;
+    padding-left: 20px;
+    color: #fafafa;
+    font-size: 40px;
+
+
+
+
