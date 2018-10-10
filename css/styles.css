@@ -1,45 +1,79 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700|Exo:100,200,300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700|Exo:100,200,300,400,500,600,700'|Exo:100,200,300,400,500,600,700);
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
 
 body, html {
     height: 100%;
 }
 
-/*Background Image*/
-.bg-img {
-    background-image: url("../assets/images/FI8A7224-Edit.jpg");
-    height: 100%; 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+/*Background Image Desktop*/
+@media only screen and (min-width: 768px) and (orientation: landscape) { 
+        .bg-img {
+        background-image: url("../assets/images/Wombat-DSC00549.jpg");
+        height: 100vh; 
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
 }
 
-.logo {
+@media only screen and (min-width: 768px) and (orientation: portrait) { 
+        .bg-img {
+        background-image: url("../assets/images/FairyPenguin-01213.jpg");
+        height: 100vh; 
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+}
+
+
+@media only screen and (max-width: 767px) and (orientation: portrait) { 
+    .bg-img {
+        background-image: url("../assets/images/FairyPenguin-01213.jpg");
+        height: 100vh; 
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+}
+
+@media only screen and (max-width: 768px) and (orientation: landscape) { 
+        .bg-img {
+        background-image: url("../assets/images/Wombat-DSC00549.jpg");
+        height: 100vh; 
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+}
+
+
+.name {
+    top:50%;
     position: absolute;
-    left: 0;
-    top: 40%;
     width: 100%;
     text-align: center;
-    color: #36454F;
+    color: #aaaaaa;
     text-transform: uppercase;
-    padding-top:264px;
-    font-size: 38px;
     letter-spacing: 10px;
     font-family: "Exo", sans-serif;
+    font-size: 30px;
 }
 
 .specs {
+    top: 60%;
     position: absolute;
-    left: 0;
-    top: 40%;
     width: 100%;
     text-align: center;
-    color: #36454F;
+    color: #aaaaaa;
     text-transform: uppercase;
-    padding-top: 357px;
-    font-size: 28px;
     letter-spacing: 10px;
     font-family: "Exo", sans-serif;
+    font-size: 20px;
 }
 
 
@@ -48,50 +82,93 @@ body, html {
 
 
 /*navigation*/
-.navbar ul li a {
-    color: #fafafa;
-    font-size: 30px;
-    text-transform: uppercase;
-    font-family: "Exo", sans-serif;
+    .navbar ul li a {
+        color: #36454F;
+        font-size: 10px;
+        text-transform: uppercase;
+        font-family: "Exo", sans-serif;
+        transition: 0.5s ease-in-out;
+        font-family: "Lato", sans-serif;
+}
+
+
+
+
+/*https://stackoverflow.com/questions/22385680/keeping-a-navbar-ul-horizontal-on-small-screens*/
+.navbar ul li { 
+    float: right;
+    margin-top: -10px;
+    margin-right: 10px;
 }
 
 .navbar-right {
     margin-top: 5px;
-    margin-right: 10px;
+    margin-right: 5px;
+    margin-left: -10px;
+    transition: 0.5s ease-in-out;
 }
 
+.size {
+    font-size: 10px;
+}
+
+
 .navbar ul li a:hover {
-    color: #36454F;
-    font-size: 30px;
-    text-transform: uppercase;
-    font-family: "Exo", sans-serif;
+    color: #56656F;
+    font-size: 17px;
     background-color: transparent;
+}
+
+.navbar-brand {
+    padding: 0;
+    margin-top: 5px;
+    margin-left: 0px;
 }
 
 
 /*footer*/
 footer {
     position: absolute;
-    top: 90%;
+    bottom: 0;
     width: 100%;
     color: #fafafa;
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 10px;
     font-family: "Exo", sans-serif;
 }
+
+.col-xs-12 {
+    text-align: center;
+}
+
+.followme {
+    margin-bottom: 10px;
+}
+
 
 .copyright-details {
-    padding-top:104px;
-    font-size: 11px;
-    font-family: "Exo", sans-serif;
-    text-align: right;
+    font-size: 5px;
+    text-align: center;
+    padding-top: 25px;
+    
 }
 
+.cr-symbol {
+     font-size: 10px;
+ }
+
 .social-links i {
-    padding-top: 80px;
-    padding-left: 20px;
     color: #fafafa;
     font-size: 40px;
+    transition: 0.5s ease-in-out;
+}
+
+.social-links i:hover {
+    color: #fafafa;
+    font-size: 50px;
+    text-decoration: none;
+}
+ 
 
 
 
