@@ -19,7 +19,7 @@ body, html {
 
 @media only screen and (min-width: 768px) and (orientation: portrait) { 
         .bg-img {
-        background-image: url("../assets/images/FairyPenguin-01213.jpg");
+        background-image: url("../assets/images/SunsetGulls-0843.jpg");
         height: 100vh; 
         background-position: center;
         background-repeat: no-repeat;
@@ -31,7 +31,7 @@ body, html {
 
 @media only screen and (max-width: 767px) and (orientation: portrait) { 
     .bg-img {
-        background-image: url("../assets/images/FairyPenguin-01213.jpg");
+        background-image: url("../assets/images/SunsetGulls-0843.jpg");
         height: 100vh; 
         background-position: center;
         background-repeat: no-repeat;
@@ -103,7 +103,7 @@ body, html {
 
 .navbar-right {
     margin-top: 5px;
-    margin-right: 5px;
+    margin-right: -5px;
     margin-left: -10px;
     transition: 0.5s ease-in-out;
 }
@@ -132,22 +132,18 @@ footer {
     bottom: 0;
     width: 100%;
     color: #fafafa;
-    text-transform: uppercase;
-    font-size: 10px;
     font-family: "Exo", sans-serif;
-}
-
-.col-xs-12 {
     text-align: center;
 }
 
 .followme {
-    margin-bottom: 10px;
+    font-size: 15px;
+    padding-bottom: 20px;
 }
 
 
 .copyright-details {
-    font-size: 5px;
+    font-size: 8px;
     text-align: center;
     padding-top: 25px;
     
@@ -161,6 +157,7 @@ footer {
     color: #fafafa;
     font-size: 40px;
     transition: 0.5s ease-in-out;
+    padding: 0 25px;
 }
 
 .social-links i:hover {
