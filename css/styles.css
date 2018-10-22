@@ -7,7 +7,7 @@ body, html {
 
 /*Background Image Desktop*/
 @media only screen and (min-width: 768px) and (orientation: landscape) { 
-        .bg-img {
+        #home .bg-img {
         background-image: url("../assets/images/Wombat-DSC00549.jpg");
         height: 100vh; 
         background-position: center;
@@ -18,7 +18,7 @@ body, html {
 }
 
 @media only screen and (min-width: 768px) and (orientation: portrait) { 
-        .bg-img {
+        #home .bg-img {
         background-image: url("../assets/images/SunsetGulls-0843.jpg");
         height: 100vh; 
         background-position: center;
@@ -30,18 +30,18 @@ body, html {
 
 
 @media only screen and (max-width: 767px) and (orientation: portrait) { 
-    .bg-img {
-        background-image: url("../assets/images/SunsetGulls-0843.jpg");
-        height: 100vh; 
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: relative;
+         #home .bg-img {
+            background-image: url("../assets/images/SunsetGulls-0843.jpg");
+            height: 100vh; 
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
     }
 }
 
 @media only screen and (max-width: 768px) and (orientation: landscape) { 
-        .bg-img {
+        #home .bg-img {
         background-image: url("../assets/images/Wombat-DSC00549.jpg");
         height: 100vh; 
         background-position: center;
@@ -168,5 +168,93 @@ footer {
  
 
 
+/* Contact Page*/
+@media only screen and (min-width: 768px) and (orientation: landscape) { 
+        #contact .bg-img {
+        background-image: url("../assets/images/FI8A7224-Edit.jpg");
+        height: 100vh; 
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+}
 
+@media only screen and (max-width: 768px) and (orientation: landscape) { 
+        #contact .bg-img {
+        background-image: url("../assets/images/FI8A7224-Edit.jpg");
+        height: 100vh; 
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+}
 
+.contact {
+    
+    display: block;
+    padding: 10pxs;
+    border: 5px solid white;
+    border-radius: 25px;
+    text-align: center;
+    
+}
+
+.callout {
+    text-align: center;
+    font-size: 40px;
+    color: #FAFAFA;
+    
+   
+}
+
+.clickhere {
+    text-align: center;
+    font-size:40px;
+    color: #FAFAFA;
+    
+    
+}
+
+#contact footer  {
+    position: absolute;
+    bottom: 0;
+    margin-left: 50px;
+    width: 100%;
+    color: #fafafa;
+    font-family: "Exo", sans-serif;
+    text-align: center;
+}
+
+/* GALLERY */
+.thumb {
+    padding: 15px 15px;
+}
+
+.filter {
+    width: 100%;
+    text-align: center;
+}
+
+.imageL {
+    display: none;
+    padding: 15px;
+    max-width:100%;
+    height: auto;
+}
+
+.remove {
+    text-align: right;
+    text-align: top;
+}
+
+.fullScreen {
+    background-image: url("");
+    height: 100vh; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: none;
+}
