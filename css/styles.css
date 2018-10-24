@@ -194,7 +194,7 @@ footer {
 .contact {
     
     display: block;
-    padding: 10pxs;
+    padding: 10px;
     border: 5px solid white;
     border-radius: 25px;
     text-align: center;
@@ -250,11 +250,20 @@ footer {
 }
 
 .fullScreen {
-    background-image: url("");
+    
     height: 100vh; 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    
+}
+
+.close {
     display: none;
+    position: absolute;
+    margin-left: 95%;
+    margin-top: 75px;
+    color: white;
+    opacity: 1.0;
 }

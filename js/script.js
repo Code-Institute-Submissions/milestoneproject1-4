@@ -31,13 +31,20 @@ $("#all").click(function(){
 */	
 $(".imageS").click(function(){
     var imgURL = $(this).next().children().attr('src');
-    $(".fullScreen").css("background-image", 'url(' + imgURL + ')');
-    $("body").toggleClass("fullScreen");
-   // $(".imageS").css("display", "none");
-    //$(".filter").css("display", "none");
-    
+     $("body").toggleClass("fullScreen");
+    $(".fullScreen").css("background-image", "url(" + imgURL + ")");
+    $(".imageS").css("display", "none");
+    $(".filter").css("display", "none");
+    $(".close").css("display", "block")
     });
-	
 
-	
+// CLOSE LARGE IMAGE AND GO BACK TO THUMBNAILS	
+$(".close").click(function(){
+    var imgURL = " "
+    $("body").removeClass("fullScreen");
+    $("body").removeAttr("style")
+    $(".filter").css("display", "block");
+    $(".imageS").css("display", "block");
+    $(".close").css("display", "none")
+    });
 }); 
