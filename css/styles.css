@@ -228,6 +228,8 @@ footer {
 }
 
 /* GALLERY */
+
+
 .thumb {
     padding: 15px 15px;
 }
@@ -267,3 +269,15 @@ footer {
     color: white;
     opacity: 1.0;
 }
+
+.chevrons {
+   margin-top: 21%;
+   color: white;
+   opacity: 1.0;
+    
+}
+.glyphicon-chevron-left {
+    margin-left: 2%;
+    margin-right: 94%;
+}
+
