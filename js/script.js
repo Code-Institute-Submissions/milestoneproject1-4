@@ -8,10 +8,12 @@ $("button").click(function(){
 	
 	if (filter == "all") {
 	    $(".thumb").css("display", "block");
+	    $(".imageL").addClass("curFilter")
 	}
 	else {
 	    $(".thumb").css("display", "block");
 	    $(".thumb").not("." + filter).css("display", "none");
+	    $(".imageL").not("." + filter).removeClass("curFilter");
 	    $(".thumb").filter("." + filter).parent().next().addClass("curFilter");
 	}
 })
@@ -43,11 +45,65 @@ $(".close").click(function(){
 
 // GO TO NEXT IMAGE 
 $(".glyphicon-chevron-right").click(function(){
-    $(".curImg").addClass("prevImg").removeClass("curImg");
-    $(".imageL").filter(".curFilter").next().addClass("curImg");
-    var imgURL = $(".curIMG").children().attr("src");
-    $(".fullScreen").css("background-image", "url(" + imgURL + ")");
+    var imgs = $(".curFilter"); 
+    var curImg =  $(".curImg");
+    var pos = $(".curFilter").index(curImg);
+    var numPics = $(".curFilter").length;
+    var curImg = $(".curFilter")[pos]; //location of current image
+    var nextImg = $(".curFilter")[pos + 1]; //location of next image
+    
+    
+    if (pos<numPics-1) {
+        
+        
+        $(curImg).removeClass("curImg"); //remove class current image
+        $(nextImg).addClass("curImg"); // add class to next image
+        var imgURL = $(nextImg).children().attr('src'); //get IMGurl
+        $(".fullScreen").css("background-image", "url(" + imgURL + ")"); //set backgorund to imgURL
+    
+    }
+        else {
+            $(curImg).removeClass("curImg");
+            var pos = 0; // reset positon to zero
+            nextImg = $(".curFilter")[pos];
+            var imgURL = $(nextImg).children().attr('src');
+            $(nextImg).addClass("curImg");
+            $(".fullScreen").css("background-image", "url(" + imgURL + ")");
+        }
+    
+   
     });
+    
+$(".glyphicon-chevron-left").click(function(){
+    var curImg =  $(".curImg");
+    var pos = $(".curFilter").index(curImg);
+    var numPics = $(".curFilter").length;
+    var curImg = $(".curFilter")[pos]; //location of current image
+    var prevImg = $(".curFilter")[pos - 1]; //location of next image
+    
+    
+    if (pos>0) {
+        
+        
+        $(curImg).removeClass("curImg"); //remove class current image
+        $(prevImg).addClass("curImg"); // add class to next image
+        var imgURL = $(prevImg).children().attr('src'); //get IMGurl
+        $(".fullScreen").css("background-image", "url(" + imgURL + ")"); //set backgorund to imgURL
+    
+    }
+        else {
+            $(curImg).removeClass("curImg");
+            var pos = numPics-1; // reset positon to last image
+            nextImg = $(".curFilter")[pos];
+            var imgURL = $(nextImg).children().attr('src');
+            $(nextImg).addClass("curImg");
+            $(".fullScreen").css("background-image", "url(" + imgURL + ")");
+        }
+    
+   
+    });    
+    
+    
 /*
     $(".glyphicon-chevron-right").click(function(){
         var imgURL = $(".curImg").next().next().children().attr('src');
