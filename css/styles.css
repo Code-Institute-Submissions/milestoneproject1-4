@@ -43,8 +43,8 @@ body, html {
 @media only screen and (max-width: 768px) and (orientation: landscape) { 
         #home .bg-img {
         background-image: url("../assets/images/Wombat-DSC00549.jpg");
-        height: 100vh; 
-        background-position: center;
+        width: 100vw; 
+        /*background-position: center top;*/
         background-repeat: no-repeat;
         background-size: cover;
         position: relative;
@@ -228,8 +228,20 @@ footer {
 }
 
 /* GALLERY */
+.imageS {
+    
+}
+/*
+.imageS {
+    opacity: 1;
+    filter: alpha(opacity=100); /* For IE8 and earlier 
+}
 
-
+.imageS:hover {
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier 
+}
+*/
 .thumb {
     padding: 15px 15px;
 }
@@ -259,6 +271,10 @@ footer {
     background-size: cover;
     position: relative;
     
+    -webkit-transition: background-image 300ms ease-in 200ms;
+    -moz-transition: background-image 300ms ease-in 200ms;
+    -o-transition: background-image 300ms ease-in 200ms;
+    transition: background-image 300ms ease-in 200ms;
 }
 
 .close {

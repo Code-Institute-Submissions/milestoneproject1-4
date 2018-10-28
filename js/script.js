@@ -18,6 +18,14 @@ $("button").click(function(){
 	}
 })
 
+//HOVER OVER THUMBNAILS EFFECT
+    $("img").hover(function() {
+        $("img").not(this).animate({opacity: 0.5}, 0);
+    }, function() {
+        $("img").not(this).animate({opacity: 1}, 0);
+    });
+
+
 
 // VIEW PHOTO LARGE //
 $(".imageS").click(function(){
@@ -88,7 +96,8 @@ $(".glyphicon-chevron-left").click(function(){
         $(curImg).removeClass("curImg"); //remove class current image
         $(prevImg).addClass("curImg"); // add class to next image
         var imgURL = $(prevImg).children().attr('src'); //get IMGurl
-        $(".fullScreen").css("background-image", "url(" + imgURL + ")"); //set backgorund to imgURL
+        //$(".fullScreen").animate({opacity: '0.5'}, "slow");
+        $(".fullScreen").css("background-image", "url(" + imgURL + ")"); //set background to imgURL
     
     }
         else {
