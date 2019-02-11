@@ -1,18 +1,6 @@
 //waits until page is ready
 $(document).ready(function() {
 
-    // NAVIGATION HOVER // 
-    $(".navbar ul li a").hover(function() {
-        $(this).hover(function() {
-            $(this).animate({ opacity: 1.0 }, 100);
-            $(this).css("background-color", "transparent");
-        }, function() {
-            //$(this).animate({opacity: 1}, 0);
-            $(this).animate({ opacity: 0.8 }, 100);
-        });
-    });
-
-
     // FILTER BUTTONS // 
     $(".filter img.button").hover(function() {
 

@@ -73,6 +73,12 @@
     font-size: 25px;
     margin-right: 1vw;
     margin-top: 1vw;
+    transition: 0.5s ease-in-out;
+}
+
+.navbar ul li a:hover {
+    transform: scale(1.1);
+    text-decoration: none;
 }
 
 .row {
@@ -134,7 +140,6 @@ footer {
     text-align: center;
     padding-top: 25px;
     color: #FFF;
-
 }
 
 .cr-symbol {
@@ -150,12 +155,12 @@ footer {
 
 .social-links a i:hover {
     color: #fafafa;
-    font-size: 50px;
+    transform: scale(1.1);
     text-decoration: none;
 }
 
 
-/* GALLERY */
+/* GALLERY PAGE */
 
 .gallery {
     width: 90vw;
