@@ -1,140 +1,206 @@
-
 //waits until page is ready
 $(document).ready(function() {
-// FILTER BUTTONS //   
-$("button").click(function(){
-    var filter = $(this).attr("id");
-    
-	
-	if (filter == "all") {
-	    $(".thumb").css("display", "block");
-	    $(".imageL").addClass("curFilter")
-	}
-	else {
-	    $(".thumb").css("display", "block");
-	    $(".thumb").not("." + filter).css("display", "none");
-	    $(".imageL").not("." + filter).removeClass("curFilter");
-	    $(".thumb").filter("." + filter).parent().next().addClass("curFilter");
-	}
-})
 
-//HOVER OVER THUMBNAILS EFFECT
-    $("img").hover(function() {
-        $("img").not(this).animate({opacity: 0.5}, 0);
+    // NAVIGATION HOVER // 
+    $(".navbar ul li a").hover(function() {
+        $(this).hover(function() {
+            $(this).animate({ opacity: 1.0 }, 100);
+            $(this).css("background-color", "transparent");
+        }, function() {
+            //$(this).animate({opacity: 1}, 0);
+            $(this).animate({ opacity: 0.8 }, 100);
+        });
+    });
+
+
+    // FILTER BUTTONS // 
+    $(".filter img.button").hover(function() {
+
+        var filter = $(this).attr("id"); //Change opacity of filter categories other than current hovered filter
+        $(".filter img").not('#' + filter).animate({ opacity: 0.5 }, 100);
+
     }, function() {
-        $("img").not(this).animate({opacity: 1}, 0);
+        $(".filter img").animate({ opacity: 1 }, 100);
     });
 
 
 
-// VIEW PHOTO LARGE //
-$(".imageS").click(function(){
-    var imgURL = $(this).next().children().attr('src');
-    var lastClicked = $(this);
-    $("body").toggleClass("fullScreen");
-    $(".fullScreen").css("background-image", "url(" + imgURL + ")");
-    $(".imageS").css("display", "none");
-    $(".filter").css("display", "none");
-    $(".close").css("display", "block");
-    $(".chevrons").css("display", "block");
-    $(this).next().addClass("curImg");
+    $(".filter img.button").hover(function() { //Change opacity of thumbnails not related to current hovered filter
+        var filter = $(this).attr("id");
+
+        if (filter == "all") {
+            $(".thumb").animate({ opacity: 1 }, 100)
+        }
+        else {
+            $(".thumb").not('.' + filter).animate({ opacity: 0.5 }, 100);
+        }
+    }, function() {
+        $(".thumb").animate({ opacity: 1 }, 100);
     });
 
-// CLOSE LARGE IMAGE AND GO BACK TO THUMBNAILS	
-$(".close").click(function(){
-    $("body").removeClass("fullScreen");
-    $("body").removeAttr("style")
-    $(".filter").css("display", "block");
-    $(".imageS").css("display", "block");
-    $(".close").css("display", "none");
-    $(".curImg").removeClass("curImg");
+
+
+    $(".filter img.button").click(function() { //Only display thumbnails selected by clicked filter
+        var filter = $(this).attr("id");
+
+
+        if (filter == "all") {
+            $(".gallery").css("background-image", "none");
+            $(".thumb").css("display", "block");
+            $(".thumb").addClass("curFilter");
+            $(".curFilter").css("display", "block");
+            $(".curImg").removeClass("curImg");
+            $(".chevrons").css("display", "none");
+            $(".info").css("display", "none");
+            $(".gallery").css("height", "100%");
+            $(".top").css("opacity", "1");
+            $(".bottom").css("display", "none");
+            $(".filter img.button").animate({ opacity: 1 }, 100);
+        }
+
+        else {
+            $(".gallery").css("background-image", "none");
+            $(".thumb").css("display", "block");
+            $(".thumb").not("." + filter).css("display", "none");
+            $(".thumb").not("." + filter).removeClass("curFilter");
+            $(".thumb").filter("." + filter).addClass("curFilter");
+            $(".curImg").removeClass("curImg");
+            $(".gallery").css("height", "100%");
+            $(".top").css("opacity", "1");
+            $(".bottom").css("display", "none");
+            $(".filter img.button").not("#" + filter).animate({ opacity: 0.5 }, 100);
+        }
+
+        //FOOTER// 
+        numPics = $("img.curFilter").length;
+
+        if (numPics < 5) {
+            $(".footer").addClass("navbar-fixed-bottom");
+        }
+        else if (numPics > 4) {
+            $(".footer").removeClass("navbar-fixed-bottom");
+        }
     });
+
+    //HOVER OVER THUMBNAILS EFFECT
+    $("img.thumb").css("opacity", 1);
+
+    $("img.thumb").hover(function() {
+        //$(this).animate({opacity: 1}, 0);
+        $(".thumb").not(this).animate({ opacity: 0.5 }, 0);
+    }, function() {
+        //$(this).animate({opacity: 1}, 0);
+        $(".thumb").not(this).animate({ opacity: 1 }, 0);
+    });
+
+
+    // VIEW PHOTO LARGE //
+    $(".thumb").click(function() {
+        $(this).addClass("curImg");
+
+        if ($(window).width() < 960) {
+            imgURL = $(".curImg").attr('src').replace("/thumbs/", "/768px/")
+        }
+        else {
+            imgURL = $(".curImg").attr('src').replace("/thumbs/", "/1200px/")
+        }
+
+        //Close thumbnails/filter, open toggles for large photos
+        $(".thumb").css("display", "none");
+        $(".gallery").css("height", "60vh");
+        $(".top").css("opacity", "0");
+        $(".bottom").css("display", "block");
+        $(".close").css("display", "block");
+        $(".filter img.chevrons").css("display", "inline-block");
+        $(".gallery").css("background-size", "contain").css("background-image", "url(" + imgURL + ")")
+        $(".footer").removeClass("navbar-fixed-bottom");
+    });
+
+
 
 
 // GO TO NEXT IMAGE 
-$(".glyphicon-chevron-right").click(function(){
-    var imgs = $(".curFilter"); 
-    var curImg =  $(".curImg");
-    var pos = $(".curFilter").index(curImg);
-    var numPics = $(".curFilter").length;
-    var curImg = $(".curFilter")[pos]; //location of current image
-    var nextImg = $(".curFilter")[pos + 1]; //location of next image
-    
-    
-    if (pos<numPics-1) {
-        
-        
-        $(curImg).removeClass("curImg"); //remove class current image
-        $(nextImg).addClass("curImg"); // add class to next image
-        var imgURL = $(nextImg).children().attr('src'); //get IMGurl
-        $(".fullScreen").css("background-image", "url(" + imgURL + ")"); //set backgorund to imgURL
-    
-    }
+    $(".next").click(function() {
+
+        var imgs = $(".curFilter");
+        var curImg = $(".curImg");
+        var pos = $(".curFilter").index(curImg);
+        var numPics = $(".curFilter").length;
+        var curImg = $(".curFilter")[pos]; //location of current image
+        var nextImg = $(".curFilter")[pos + 1]; //location of next image
+
+
+        //Loop current filter of photos
+        if (pos < numPics - 1) {
+            $(curImg).removeClass("curImg"); //remove class current image
+            $(nextImg).addClass("curImg"); // add class to next image
+        }
+
         else {
             $(curImg).removeClass("curImg");
-            var pos = 0; // reset positon to zero
+            var pos = 0; // reset positon to first photo
             nextImg = $(".curFilter")[pos];
-            var imgURL = $(nextImg).children().attr('src');
             $(nextImg).addClass("curImg");
-            $(".fullScreen").css("background-image", "url(" + imgURL + ")");
         }
-    
-   
+
+        if ($(window).width() < 960) {
+            imgURL = $(".curImg").attr('src').replace("/thumbs/", "/768px/")
+        }
+        else {
+            imgURL = $(".curImg").attr('src').replace("/thumbs/", "/1200px/")
+        }
+
+        $(".gallery").animate({
+            opacity: 0
+        }, 1000, function() {
+            // Animation complete.
+
+            $(".gallery").css("background-size", "contain").css("background-image", "url(" + imgURL + ")");
+            $(".gallery").animate({ opacity: 1 }, 1000);
+        });
+     });
+
+
+// GO TO PREVIOUS IMAGE
+    $(".previous").click(function() {
+
+
+        var imgs = $(".curFilter");
+        var curImg = $(".curImg");
+        var pos = $(".curFilter").index(curImg);
+        var numPics = $(".curFilter").length;
+        var curImg = $(".curFilter")[pos]; //location of current image
+        var nextImg = $(".curFilter")[pos - 1]; //location of next image
+
+        //Loop current filter of photos
+        if (pos > 0) {
+            $(curImg).removeClass("curImg"); //remove class current image
+            $(nextImg).addClass("curImg"); // add class to next image
+        }
+
+        else {
+            $(curImg).removeClass("curImg");
+            var pos = numPics - 1; // reset positon to last photo
+            nextImg = $(".curFilter")[pos];
+            $(nextImg).addClass("curImg");
+        }
+
+        if ($(window).width() < 960) {
+            imgURL = $(".curImg").attr('src').replace("/thumbs/", "/768px/")
+        }
+        else {
+            imgURL = $(".curImg").attr('src').replace("/thumbs/", "/1200px/")
+        }
+
+        $(".gallery").animate({
+            opacity: 0
+        }, 1000, 'swing', function() {
+            // Animation complete.
+
+            $(".gallery").css("background-size", "contain").css("background-image", "url(" + imgURL + ")");
+            $(".gallery").animate({ opacity: 1 }, 1000, 'swing');
+        });
+
     });
-    
-$(".glyphicon-chevron-left").click(function(){
-    var curImg =  $(".curImg");
-    var pos = $(".curFilter").index(curImg);
-    var numPics = $(".curFilter").length;
-    var curImg = $(".curFilter")[pos]; //location of current image
-    var prevImg = $(".curFilter")[pos - 1]; //location of next image
-    
-    
-    if (pos>0) {
-        
-        
-        $(curImg).removeClass("curImg"); //remove class current image
-        $(prevImg).addClass("curImg"); // add class to next image
-        var imgURL = $(prevImg).children().attr('src'); //get IMGurl
-        //$(".fullScreen").animate({opacity: '0.5'}, "slow");
-        $(".fullScreen").css("background-image", "url(" + imgURL + ")"); //set background to imgURL
-    
-    }
-        else {
-            $(curImg).removeClass("curImg");
-            var pos = numPics-1; // reset positon to last image
-            nextImg = $(".curFilter")[pos];
-            var imgURL = $(nextImg).children().attr('src');
-            $(nextImg).addClass("curImg");
-            $(".fullScreen").css("background-image", "url(" + imgURL + ")");
-        }
-    
-   
-    });    
-    
-    
-/*
-    $(".glyphicon-chevron-right").click(function(){
-        var imgURL = $(".curImg").next().next().children().attr('src');
-        $(".curImg").addClass("prevImg").removeClass("curImg");
-        $(".prevImg").next().next().addClass("curImg");
-        $(".prevImg").removeClass("prevImg");
-        $(".fullScreen").css("background-image", "url(" + imgURL + ")");
-        });
-   
-       
-// GO TO PREVIOUS IMAGE 
-$(".glyphicon-chevron-left").click(function(){
-    var imgURL = $(".curImg").prev().prev().children().attr('src');
-        $(".curImg").addClass("prevImg").removeClass("curImg");
-        $(".prevImg").prev().prev().addClass("curImg");
-        $(".prevImg").removeClass("prevImg");
-        $(".fullScreen").css("background-image", "url(" + imgURL + ")");
-        });
-    
-*/       
-       
-       
-}); 
 
-
+});

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" type="text/css" />
-    <link rel="stylesheet" href="../css/styles.css" type="text/css" />
+    <link rel="stylesheet" href="../css/styles2.css" type="text/css" />
     <title>Daniel vand Photography</title>
 </head>
 
@@ -26,7 +26,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a data-toggle="modal" data-target="#myModal"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
                         <li><a href="../assets/about.html"><i class="fa fa-address-book-o" aria-hidden="true"></i></a></li>
-                        <li><a href="../assets/gallery.html"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
+                        <li><a href="../assets/gallery2.html"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
 
                         <!-- <li><a href="../assets/gallery2.html"><span class="glyphicon glyphicon-camera"></span></a></li>
           <li><a href="../assets/index.html"><span class="glyphicon glyphicon-home"></span></a></li>-->
@@ -45,7 +45,7 @@
 
         <!-- GALLERY -->
         <div class="gallery container">
-            <img class="curFilter wildlife col-xs-6 col-md-3 thumb" src="../assets/images/thumbs/DIvanDuinkerken_1920-00549.jpg"></img>
+            <img class="curFilter wildlife col-xs-6 col-md-3 thumb" data-target="#myGallery" src="../assets/images/thumbs/DIvanDuinkerken_1920-00549.jpg"></img>
 
             <img class="curFilter outdoor col-xs-6 col-md-3 thumb" src="../assets/images/thumbs/DIvanDuinkerken_1920-2.jpg"></img>
 
@@ -91,8 +91,6 @@
       <span class="glyphicon glyphicon-chevron-right"></span>-->
         </div>
 
-
-        <!-- Modal -->
         <div id="myModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
                 <!-- Modal content-->
@@ -128,13 +126,35 @@
         </div>
 
 
+        <!-- Gallery Modal -->
+        <div id="myGallery" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                        <div class="filter bottom">
+                            <img class="chevrons previous" align="left" src="../assets/images/symbols/ArrowLeft.png"></img>
+                            <img id="all" class='button' src="../assets/images/symbols/FilterAll.png"></img>
+                            <img id="wildlife" class='button' src="../assets/images/symbols/FiltersWildlife.png"></img>
+                            <img id="outdoor" class='button' src="../assets/images/symbols/FilterOutdoor.png"></img>
+                            <img class="chevrons next" align="right" src="../assets/images/symbols/ArrowRight.png"></img>
+                        </div>
+                    </div>
+                    <div class="modal-body gallery-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <!-- FOOTER -->
         <footer class="footer container-fluid">
             <div class="row">
                 <div class="social-links">
                     <a data-toggle="modal" data-target="#myModal"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
                     <a href="https://www.instagram.com/danielvandphoto/" target="_blank"><i class="fa fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/Daniel-van-D-Photography-640810259359261/" target="_blank"fm><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.facebook.com/Daniel-van-D-Photography-640810259359261/" target="_blank"><i class="fa fa-facebook"></i></a>
                 </div>
 
                 <div class="row">
@@ -151,7 +171,7 @@
     <!-- SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="../js/script.js"></script>
+    <script src="../js/script2.js"></script>
     <!-- Scripts located at the bottom of the body to insure page is fully loaded before execution -->
 
 </body>

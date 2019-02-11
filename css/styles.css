@@ -1,299 +1,247 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700|Exo:100,200,300,400,500,600,700'|Exo:100,200,300,400,500,600,700);
+@import url('https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700|Exo:100,200,300,400,500,600,700'|Exo:100,
+200,
+300,
+400,
+500,
+600,
+700);
 @import url('https://fonts.googleapis.com/css?family=Poiret+One');
 
-body, html {
-    height: 100%;
-}
+/*Background Image*/
 
-/*Background Image Desktop*/
-@media only screen and (min-width: 768px) and (orientation: landscape) { 
-        #home .bg-img {
-        background-image: url("../assets/images/Wombat-DSC00549.jpg");
-        height: 100vh; 
+@media only screen and (min-width: 768px) {
+    .bg-img {
+        background-image: url("../assets/images/1200px/DIvanDuinkerken_1920-01213.jpg");
+        height: 100vh;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        position: relative;
+        position: fixed;
+        left: 0;
+        right: 0;
+        z-index: -1;
     }
 }
 
-@media only screen and (min-width: 768px) and (orientation: portrait) { 
-        #home .bg-img {
-        background-image: url("../assets/images/SunsetGulls-0843.jpg");
-        height: 100vh; 
+@media only screen and (max-width: 768px) {
+    .bg-img {
+        background-image: url("../assets/images/768px/DIvanDuinkerken_1920-01213.jpg");
+        height: 100vh;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        position: relative;
+        position: fixed;
+        left: 0;
+        right: 0;
+        z-index: -1;
     }
 }
 
-
-@media only screen and (max-width: 767px) and (orientation: portrait) { 
-         #home .bg-img {
-            background-image: url("../assets/images/SunsetGulls-0843.jpg");
-            height: 100vh; 
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: relative;
-    }
+#about.bg-img {
+    background-image: url("../assets/images/BG-IMG-DIvanDuinkerken_1920-01213.jpg");
 }
 
-@media only screen and (max-width: 768px) and (orientation: landscape) { 
-        #home .bg-img {
-        background-image: url("../assets/images/Wombat-DSC00549.jpg");
-        width: 100vw; 
-        /*background-position: center top;*/
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: relative;
-    }
+#gallery .bg-img {
+    filter: blur(20px);
+}
+
+#about .bg-img {
+    filter: blur(20px);
+}
+
+/*General Content*/
+
+.content {
+
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    /*margin-left: 20px;
+  margin-right: 20px;*/
 }
 
 
-.name {
-    top:50%;
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    color: #aaaaaa;
-    text-transform: uppercase;
-    letter-spacing: 10px;
-    font-family: "Exo", sans-serif;
-    font-size: 30px;
+/*NAVIGATION ALL PAGES*/
+
+.nav {
+    height: 10vh;
 }
 
-.specs {
-    top: 60%;
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    color: #aaaaaa;
-    text-transform: uppercase;
-    letter-spacing: 10px;
-    font-family: "Exo", sans-serif;
-    font-size: 20px;
+.navbar ul li a {
+    opacity: 0.9;
+    color: #FAFAFA;
+    font-size: 25px;
+    margin-right: 1vw;
+    margin-top: 1vw;
+}
+
+.row {
+    margin-right: 0px;
+    margin-left: -15px;
 }
 
 
 
-
-
-
-/*navigation*/
-    .navbar ul li a {
-        color: #36454F;
-        font-size: 10px;
-        text-transform: uppercase;
-        font-family: "Exo", sans-serif;
-        transition: 0.5s ease-in-out;
-        font-family: "Lato", sans-serif;
-}
-
-
-
-
-/*https://stackoverflow.com/questions/22385680/keeping-a-navbar-ul-horizontal-on-small-screens*/
-.navbar ul li { 
+.navbar ul li {
     float: right;
-    margin-top: -10px;
-    margin-right: 10px;
-}
-
-.navbar-right {
-    margin-top: 5px;
-    margin-right: -5px;
-    margin-left: -10px;
-    transition: 0.5s ease-in-out;
-}
-
-.size {
-    font-size: 10px;
+    margin-right: 0px;
 }
 
 
-.navbar ul li a:hover {
-    color: #56656F;
-    font-size: 17px;
-    background-color: transparent;
+
+#home img.logo {
+    margin-left: 1vw;
+    margin-top: -1vw;
+    width: 40vw;
+    filter: brightness(1600%)
 }
+
+#gallery img.logo {
+    margin-left: 1vw;
+    margin-top: -1vw;
+    width: 25vw;
+    filter: brightness(1600%)
+}
+
+#about img.logo {
+    margin-left: 1vw;
+    margin-top: -1vw;
+    width: 25vw;
+    filter: brightness(1600%)
+}
+
 
 .navbar-brand {
     padding: 0;
-    margin-top: 5px;
+    margin-top: 0px;
     margin-left: 0px;
 }
 
 
-/*footer*/
+/*FOOTER*/
+
 footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    color: #fafafa;
+    display: block;
+    color: white;
+    background-color: transparent;
     font-family: "Exo", sans-serif;
     text-align: center;
 }
 
-.followme {
-    font-size: 15px;
-    padding-bottom: 20px;
-}
-
 
 .copyright-details {
-    font-size: 8px;
+    font-size: 15px;
     text-align: center;
     padding-top: 25px;
-    
+    color: #FFF;
+
 }
 
 .cr-symbol {
-     font-size: 10px;
- }
+    font-size: 20px;
+}
 
-.social-links i {
+.social-links a i {
     color: #fafafa;
     font-size: 40px;
     transition: 0.5s ease-in-out;
     padding: 0 25px;
 }
 
-.social-links i:hover {
+.social-links a i:hover {
     color: #fafafa;
     font-size: 50px;
     text-decoration: none;
 }
- 
 
-
-/* Contact Page*/
-@media only screen and (min-width: 768px) and (orientation: landscape) { 
-        #contact .bg-img {
-        background-image: url("../assets/images/FI8A7224-Edit.jpg");
-        height: 100vh; 
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: relative;
-    }
-}
-
-@media only screen and (max-width: 768px) and (orientation: landscape) { 
-        #contact .bg-img {
-        background-image: url("../assets/images/FI8A7224-Edit.jpg");
-        height: 100vh; 
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: relative;
-    }
-}
-
-.contact {
-    
-    display: block;
-    padding: 10px;
-    border: 5px solid white;
-    border-radius: 25px;
-    text-align: center;
-    
-}
-
-.callout {
-    text-align: center;
-    font-size: 40px;
-    color: #FAFAFA;
-    
-   
-}
-
-.clickhere {
-    text-align: center;
-    font-size:40px;
-    color: #FAFAFA;
-    
-    
-}
-
-#contact footer  {
-    position: absolute;
-    bottom: 0;
-    margin-left: 50px;
-    width: 100%;
-    color: #fafafa;
-    font-family: "Exo", sans-serif;
-    text-align: center;
-}
 
 /* GALLERY */
-.imageS {
-    
-}
-/*
-.imageS {
-    opacity: 1;
-    filter: alpha(opacity=100); /* For IE8 and earlier 
+
+.gallery {
+    width: 90vw;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-.imageS:hover {
-    opacity: 0.5;
-    filter: alpha(opacity=50); /* For IE8 and earlier 
-}
-*/
+
 .thumb {
     padding: 15px 15px;
 }
 
 .filter {
-    width: 100%;
     text-align: center;
+    filter: brightness(800%) grayscale(100%);
+    margin-left: 5vw;
+    width: 90vw;
 }
 
-.imageL {
+.bottom {
     display: none;
-    padding: 15px;
-    max-width:100%;
-    height: auto;
 }
 
-.remove {
-    text-align: right;
-    text-align: top;
+.top {
+    display: block;
+    margin-top: 5vw;
 }
+
+
+.filter img {
+    height: 4vw;
+    margin: 2vw;
+}
+
 
 .fullScreen {
-    
-    height: 100vh; 
+    height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     position: relative;
-    
-    -webkit-transition: background-image 300ms ease-in 200ms;
-    -moz-transition: background-image 300ms ease-in 200ms;
-    -o-transition: background-image 300ms ease-in 200ms;
-    transition: background-image 300ms ease-in 200ms;
 }
 
-.close {
+
+.filter img.chevrons {
     display: none;
-    position: absolute;
-    margin-left: 95%;
-    margin-top: 75px;
-    color: white;
+    height: 2vw;
+    filter: brightness(600%) grayscale(100%);
     opacity: 1.0;
+    vertical-align: middle;
 }
 
-.chevrons {
-   margin-top: 21%;
-   color: white;
-   opacity: 1.0;
-    
-}
-.glyphicon-chevron-left {
-    margin-left: 2%;
-    margin-right: 94%;
+
+.info {
+    position: absolute;
+    top: 120px;
+    right: 20px;
+    display: none;
+    color: white;
+    opacity: 0.8;
 }
 
+
+
+/*ABOUT PAGE*/
+
+.column {
+    width: 90vw;
+    padding-top: 20vw;
+    padding-bottom: 5vh;
+}
+
+.column h1 {
+    text-align: center;
+    color: #f5f5f5;
+    font-family: "Exo", sans-serif;
+}
+
+.column p {
+    color: #f5f5f5;
+    text-align: justify;
+    font-family: "Exo", sans-serif;
+}
+
+.text-column {
+    padding-right: 5vw;
+    padding-left: 5vw;
+}

@@ -31,15 +31,30 @@
             </nav>
         </header>
 
+        <!-- Contact Form -->
 
-        <div class="row">
-            <span class="col-xs-4 col-xs-offset-4 contact">
-            <span class="callout text-uppercase">Question? Collaborate?</span>
-            <br>
-            <span class="clickhere text-uppercase">click here!</span>
-            </span>
-        </div>
 
+
+        <section class="container-fluid ">
+            <div class="row bg-color-contact">
+
+                <div class="center-form col-6">
+                    <button>
+                        <span class="col-xs-4 col-xs-offset-4 contact">
+                        <span class="callout text-uppercase">Question? Collaborate?</span>
+                        <br>
+                        <span class="clickhere text-uppercase">click here!</span>
+                        </span>
+                    </button>
+                <form>
+                    <input type="text" name="name" class="form-control" id="fullname" placeholder="Name" required/>
+                    <input type="text" name="emailaddress" class="form-control" id="emailaddress" placeholder="Email" required/>
+                    <textarea rows="5" name="message" class="form-control" id="message" placeholder="Type your message here..." required></textarea>
+                    <button type="submit" class="btn btn-secondary center-block">Send Message</button>
+                </form>
+                </div>
+            </div>
+        </section>
 
 
         <footer class="container-fluid">

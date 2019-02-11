@@ -9,60 +9,114 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" type="text/css" />
     <link rel="stylesheet" href="../css/styles.css" type="text/css" />
-    <title>daniel vand photography</title>
+    <title>Daniel vand Photography</title>
 </head>
 
-<body>
-    <div class="bg-img">
-
+<body id="about">
+    <div class="bg-img"></div>
+    <div class="content">
+        <!-- HEADER -->
         <header>
             <nav class="navbar nav-default container-fluid">
                 <div class="row">
                     <ul class="nav navbar-brand navbar-left">
-                        <li class="size"><a href="/">Daniel van Duinkerken</a>
+                        <li class="logo"><a href="../assets/index.html"><img class="logo" src="../assets/images/symbols/DVDPhoto.png"></img></a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="../assets/contact.html"><span class="glyphicon glyphicon-phone-alt"></span></a></li>
-                        <li><a href="../assets/about.html"><span class="glyphicon glyphicon-info-sign"></span></a></li>
-                        <li><a href="../assets/gallery.html"><span class="glyphicon glyphicon-camera"></span></a></li>
-                        <li><a href="../assets/index.html"><span class="glyphicon glyphicon-home"></span></a></li>
+                        <li><a data-toggle="modal" data-target="#myModal"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
+                        <li><a href="../assets/about.html"><i class="fa fa-address-book-o" aria-hidden="true"></i></a></li>
+                        <li><a href="../assets/gallery.html"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
+
+                        <!-- <li><a href="../assets/gallery2.html"><span class="glyphicon glyphicon-camera"></span></a></li>
+          <li><a href="../assets/index.html"><span class="glyphicon glyphicon-home"></span></a></li>-->
                     </ul>
                 </div>
             </nav>
         </header>
 
-
-
-        <!--  <div logo>
-            <span class="row name uppercase center-image">daniel van duinkerken photography</span>
-            <span class="row specs center-image">wildlife | outdoor</span>
-        </div> -->
-
-
-
-        <footer class="container-fluid">
+        <!-- TEXT COLUMNS -->
+        <div class="column container-fluid">
             <div class="row">
-                <div class="col-xs-12 text-uppercase followme">
-                    follow me on:
-                </div>
-                <div class="col-xs-12">
-                    <a class="social-links" target="_blank" href="#">
-                        <i class="fa fa-instagram"></i>
-                    </a>
-                    <a class="social-links" target="_blank" href="#">
-                        <i class="fa fa-facebook"></i>
-                    </a>
+                <div class="col-xs-12 col-md-4 text-column">
+                    <h1>WHO AM I</h1>
+                    <p>Raised in The Netherlands, Trained up as a behavioural biologist, passionate about wildlife and photography. I try to combine these passions and my skills to create stunning imagery of the world around me. </p>
                 </div>
 
+                <div class="col-xs-12 col-md-4 text-column">
+                    <h1>IMAGERY</h1>
+                    <p>Through my photography, I try to show animals in their environment, exhibiting natural and interesting behaviour. Through technologies such as camera traps, floating hides and underwater housings I try to get me or my camera as close
+                        as possible to interesting wildlife.</p>
+                </div>
 
+                <div class="col-xs-12 col-md-4 text-column">
+                    <h1>COLLABORATE</h1>
+                    <p>Would you like to collaborate or contact me? Then please click on the 'Contact' tab in the menu above or the footer below and shoot me an e-mail!.</p>
+                </div>
 
+            </div>
+        </div>
 
-                <div class="col-xs-12 copyright-details text-uppercase">
-                    all images <span class="cr-symbol">©</span> daniel van duinkerken 2010-2018
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                        <h4 class="modal-title">
+                            Send me a message
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form" method="post" id="reused_form">
+                            <p> Send your message in the form below and I will get back to you. </p>
+                            <div class="form-group">
+                                <label for="name"> Name:</label>
+                                <input type="text" class="form-control" id="name" name="name" required="" maxlength="50">
+                            </div>
+                            <div class="form-group">
+                                <label for="email"> Email:</label>
+                                <input type="email" class="form-control" id="email" name="email" required="" maxlength="50">
+                            </div>
+                            <div class="form-group">
+                                <label for="name"> Message:</label>
+                                <textarea class="form-control" type="textarea" name="message" id="message" placeholder="Your Message Here" maxlength="6000" rows="7"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-lg btn-primary btn-block" id="btnContactUs">Send Message</button>
+                        </form>
+                        <!--<div id="success_message" style="width:100%; height:100%; display:none; "> <h3>Sent your message successfully!</h3> </div>
+                            <div id="error_message" style="width:100%; height:100%; display:none; "> <h3>Error</h3> Sorry there was an error sending your form. </div>-->
+                    </div>
                 </div>
             </div>
+        </div>
+
+
+        <!-- FOOTER -->
+        <footer class="footer navbar-fixed-bottom container-fluid">
+            <div class="row">
+                <div class="social-links">
+                    <a data-toggle="modal" data-target="#myModal"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/danielvandphoto/" target="_blank"><i class="fa fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/Daniel-van-D-Photography-640810259359261/" target="_blank"><i class="fa fa-facebook"></i></a>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col md-12 copyright-details text-uppercase">
+                        all images <span class="cr-symbol">©</span> daniel van duinkerken 2010-2018
+                    </div>
+                </div>
+            </div>
+
+
+        </footer>
+
     </div>
-    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
     </div>
 
 </body>
