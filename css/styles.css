@@ -67,7 +67,7 @@
     height: 10vh;
 }
 
-.navbar ul li a {
+.nav>li>a {
     opacity: 0.9;
     color: #FAFAFA;
     font-size: 25px;
@@ -76,9 +76,10 @@
     transition: 0.5s ease-in-out;
 }
 
-.navbar ul li a:hover {
+.nav>li>a:hover {
     transform: scale(1.1);
     text-decoration: none;
+    background: transparent;
 }
 
 .row {
