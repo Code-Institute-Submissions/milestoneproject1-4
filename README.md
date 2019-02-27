@@ -4,11 +4,11 @@
  
 ### What is this website for?
  
-This is a website to showcase the photography of Daniel van Duinkerken.
+This is a website to showcase the photography work of Daniel van Duinkerken.
  
 ### What does it do?
  
-This website provides people with a portfolio of Daniel van Duinkerken's work, information about him, links to his social media accounts and ways to contact him
+This website provides people with a portfolio of Daniel van Duinkerken's work, basic information about him, links to his social media accounts and ways to contact him
  
 ### How does it work
  
@@ -32,11 +32,11 @@ This website provides people with a portfolio of Daniel van Duinkerken's work, i
 
 ## Tech Used
 
-### Some the tech used includes:
+### Some of the tech used includes:
 - **HTML**, **CSS** and **Javascript**
   - Base languages used to create website
 - [Bootstrap](http://getbootstrap.com/)
-    - **Bootstrap** to give our project a simple, responsive layout
+    - **Bootstrap** to give the project a simple, responsive layout
 - [JQuery](https://jquery.com)
     - **JQuery** for gallery and modal contact form
 
@@ -49,22 +49,25 @@ This website provides people with a portfolio of Daniel van Duinkerken's work, i
   - Opera
   - Microsoft Edge
   - Mozilla Firefox
+  - Safari
 
 ## Contributing
 The following websites links were used to help with coding:
 
-https://www.webmalama.com/the-best-full-screen-background-image-sizes-for-web-design/ 
-https://stackoverflow.com/questions/5545283/get-index-of-clicked-element-in-collection-with-jquery get index of selector
-http://www.jquerybyexample.net/2012/05/how-to-change-image-opacity-on.html Hover on thumbnails
-Modal: http://reusableforms.com/d/p4/contact-form-in-bootstrap-modal
-https://www.w3schools.com/bootstrap/bootstrap_modal.asp
-https://stackoverflow.com/questions/20039765/how-to-apply-a-css-3-blur-filter-to-a-background-image
-https://stackoverflow.com/questions/22385680/keeping-a-navbar-ul-horizontal-on-small-screens
+[full-screen-background-image-sizes-for-web-design](https://www.webmalama.com/the-best-full-screen-background-image-sizes-for-web-design/)
+[get-index-of-clicked-element-in-collection-with-jquery get index of selector](https://stackoverflow.com/questions/5545283/get-index-of-clicked-element-in-collection-with-jquery get index of selector)
+[how-to-change-image-opacity-on.html Hover on thumbnails](http://www.jquerybyexample.net/2012/05/how-to-change-image-opacity-on.html Hover on thumbnails)
+[contact-form-in-bootstrap-modal](Modal: http://reusableforms.com/d/p4/contact-form-in-bootstrap-modal)
+[bootstrap modal](https://www.w3schools.com/bootstrap/bootstrap_modal.asp)
+[blur filter css](https://stackoverflow.com/questions/20039765/how-to-apply-a-css-3-blur-filter-to-a-background-image)
+[keeping-a-navbar-ul-horizontal-on-small-screens](https://stackoverflow.com/questions/22385680/keeping-a-navbar-ul-horizontal-on-small-screens)
+[Template Readme]()
 
+[AUDIO Files] (zapslat.com)
 
-## Credits
+### Credits
 
-### Media
+## Media
 - The photos used in this site are made by Daniel van Duinkerken
 
 

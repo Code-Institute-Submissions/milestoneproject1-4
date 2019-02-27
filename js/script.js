@@ -1,192 +1,200 @@
 //waits until page is ready
 $(document).ready(function() {
 
-    // FILTER BUTTONS // 
-    $(".filter img.button").hover(function() {
+    // FILTER BUTTONS //
+    //Change opacity of filter categories other than current hovered filter
+    $('.filter button').hover(function() {
 
-        var filter = $(this).attr("id"); //Change opacity of filter categories other than current hovered filter
-        $(".filter img").not('#' + filter).animate({ opacity: 0.5 }, 100);
+        var filter = $(this).attr('id');
+        $('.filter img').not('#' + filter).animate({ opacity: 0.5 }, 100);
 
     }, function() {
-        $(".filter img").animate({ opacity: 1 }, 100);
+        $('.filter img').animate({ opacity: 1 }, 100);
     });
 
 
+    //Change opacity of thumbnails not related to current hovered filter
+    $('.filter button').hover(function() {
+        var filter = $(this).attr('id');
 
-    $(".filter img.button").hover(function() { //Change opacity of thumbnails not related to current hovered filter
-        var filter = $(this).attr("id");
-
-        if (filter == "all") {
-            $(".thumb").animate({ opacity: 1 }, 100)
+        if (filter == 'all') {
+            $('.thumb').animate({ opacity: 1 }, 100)
         }
         else {
-            $(".thumb").not('.' + filter).animate({ opacity: 0.5 }, 100);
+            $('.thumb').not('.' + filter).animate({ opacity: 0.5 }, 100);
         }
     }, function() {
-        $(".thumb").animate({ opacity: 1 }, 100);
+        $('.thumb').animate({ opacity: 1 }, 100);
     });
 
 
+    //Only display thumbnails selected by clicked filter
+    $('.filter button').click(function() {
+        var filter = $(this).attr('id');
 
-    $(".filter img.button").click(function() { //Only display thumbnails selected by clicked filter
-        var filter = $(this).attr("id");
 
-
-        if (filter == "all") {
-            $(".gallery").css("background-image", "none");
-            $(".thumb").css("display", "block");
-            $(".thumb").addClass("curFilter");
-            $(".curFilter").css("display", "block");
-            $(".curImg").removeClass("curImg");
-            $(".chevrons").css("display", "none");
-            $(".info").css("display", "none");
-            $(".gallery").css("height", "100%");
-            $(".top").css("opacity", "1");
-            $(".bottom").css("display", "none");
-            $(".filter img.button").animate({ opacity: 1 }, 100);
+        if (filter == 'all') {
+            $('.gallery').css('background-image', 'none');
+            $('.thumb').css('display', 'block');
+            $('.thumb').addClass('curFilter');
+            $('.curFilter').css('display', 'block');
+            $('.curImg').removeClass('curImg');
+            //$('.chevrons').css('display', 'none');
+            //$('.info').css('display', 'none');
+            $('.gallery').css('height', '100%');
+            $('.top').css('display', 'block');
+            $('.scroll').css('display', 'none');
+            $('.filter button').animate({ opacity: 1 }, 100);
         }
 
         else {
-            $(".gallery").css("background-image", "none");
-            $(".thumb").css("display", "block");
-            $(".thumb").not("." + filter).css("display", "none");
-            $(".thumb").not("." + filter).removeClass("curFilter");
-            $(".thumb").filter("." + filter).addClass("curFilter");
-            $(".curImg").removeClass("curImg");
-            $(".gallery").css("height", "100%");
-            $(".top").css("opacity", "1");
-            $(".bottom").css("display", "none");
-            $(".filter img.button").not("#" + filter).animate({ opacity: 0.5 }, 100);
+            $('.gallery').css('background-image', 'none');
+            $('.thumb').css('display', 'block');
+            $('.thumb').not('.' + filter).css('display', 'none');
+            $('.thumb').not('.' + filter).removeClass('curFilter');
+            $('.thumb').filter('.' + filter).addClass('curFilter');
+            $('.curImg').removeClass('curImg');
+            $('.gallery').css('height', '100%');
+            $('.top').css('display', 'block');
+            $('.scroll').css('display', 'none');
+            $('.filter button').not('#' + filter).animate({ opacity: 0.5 }, 100);
         }
 
-        //FOOTER// 
-        numPics = $("img.curFilter").length;
+        //Fix footer to bottom when there are less than four thumbnails// 
+        numPics = $('img.curFilter').length;
 
         if (numPics < 5) {
-            $(".footer").addClass("navbar-fixed-bottom");
+            $('.footer').addClass('navbar-fixed-bottom');
         }
         else if (numPics > 4) {
-            $(".footer").removeClass("navbar-fixed-bottom");
+            $('.footer').removeClass('navbar-fixed-bottom');
         }
     });
 
     //HOVER OVER THUMBNAILS EFFECT
-    $("img.thumb").css("opacity", 1);
+    $('img.thumb').css('opacity', 1);
 
-    $("img.thumb").hover(function() {
-        //$(this).animate({opacity: 1}, 0);
-        $(".thumb").not(this).animate({ opacity: 0.5 }, 0);
+    $('img.thumb').hover(function() {
+        $('.thumb').not(this).animate({ opacity: 0.5 }, 0);
     }, function() {
-        //$(this).animate({opacity: 1}, 0);
-        $(".thumb").not(this).animate({ opacity: 1 }, 0);
+        $('.thumb').not(this).animate({ opacity: 1 }, 0);
     });
 
 
     // VIEW PHOTO LARGE //
-    $(".thumb").click(function() {
-        $(this).addClass("curImg");
+    $('.thumb').click(function() {
+        $(this).addClass('curImg');
 
         if ($(window).width() < 960) {
-            imgURL = $(".curImg").attr('src').replace("/thumbs/", "/768px/")
+            imgURL = $('.curImg').attr('src').replace('/thumbs/', '/768px/')
         }
         else {
-            imgURL = $(".curImg").attr('src').replace("/thumbs/", "/1200px/")
+            imgURL = $('.curImg').attr('src').replace('/thumbs/', '/1200px/')
         }
 
         //Close thumbnails/filter, open toggles for large photos
-        $(".thumb").css("display", "none");
-        $(".gallery").css("height", "60vh");
-        $(".top").css("opacity", "0");
-        $(".bottom").css("display", "block");
-        $(".close").css("display", "block");
-        $(".filter img.chevrons").css("display", "inline-block");
-        $(".gallery").css("background-size", "contain").css("background-image", "url(" + imgURL + ")")
-        $(".footer").removeClass("navbar-fixed-bottom");
+        $('.thumb').css('display', 'none');
+        $('.gallery').css('height', '60vh');
+        $('.top').css('display', 'none');
+        $('.scroll').css('display', 'block');
+        //$('.close').css('display', 'block');
+        //$('.filter button.chevrons').css('display', 'inline-block');
+        $('.gallery').css('background-size', 'contain').css('background-image', 'url(' + imgURL + ')')
+        $('.footer').removeClass('navbar-fixed-bottom');
     });
 
 
+    // CLOSE IMAGE
+    $('button.closeit').click(function() {
+        $('.gallery').css('background-image', 'none');
+        $('.thumb').css('display', 'block');
+        $('.thumb').addClass('curFilter');
+        $('.curFilter').css('display', 'block');
+        $('.curImg').removeClass('curImg');
+       // $('.chevrons').css('display', 'none');
+        //$('.info').css('display', 'none');
+        $('.gallery').css('height', '100%');
+        $('.top').css('display', 'block');
+        $('.scroll').css('display', 'none');
+        $('.filter button').animate({ opacity: 1 }, 100);
+    })
 
+    // GO TO NEXT IMAGE 
+    $('button.next').click(function() {
 
-// GO TO NEXT IMAGE 
-    $(".next").click(function() {
-
-        var imgs = $(".curFilter");
-        var curImg = $(".curImg");
-        var pos = $(".curFilter").index(curImg);
-        var numPics = $(".curFilter").length;
-        var curImg = $(".curFilter")[pos]; //location of current image
-        var nextImg = $(".curFilter")[pos + 1]; //location of next image
+        var imgs = $('.curFilter');
+        var curImg = $('.curImg');
+        var pos = $('.curFilter').index(curImg);
+        var numPics = $('.curFilter').length;
+        var curImg = $('.curFilter')[pos];
+        var nextImg = $('.curFilter')[pos + 1];
 
 
         //Loop current filter of photos
         if (pos < numPics - 1) {
-            $(curImg).removeClass("curImg"); //remove class current image
-            $(nextImg).addClass("curImg"); // add class to next image
+            $(curImg).removeClass('curImg');
+            $(nextImg).addClass('curImg');
         }
 
         else {
-            $(curImg).removeClass("curImg");
-            var pos = 0; // reset positon to first photo
-            nextImg = $(".curFilter")[pos];
-            $(nextImg).addClass("curImg");
+            $(curImg).removeClass('curImg');
+            var pos = 0;
+            nextImg = $('.curFilter')[pos];
+            $(nextImg).addClass('curImg');
         }
 
         if ($(window).width() < 960) {
-            imgURL = $(".curImg").attr('src').replace("/thumbs/", "/768px/")
+            imgURL = $('.curImg').attr('src').replace('/thumbs/', '/768px/')
         }
         else {
-            imgURL = $(".curImg").attr('src').replace("/thumbs/", "/1200px/")
+            imgURL = $('.curImg').attr('src').replace('/thumbs/', '/1200px/')
         }
 
-        $(".gallery").animate({
+        $('.gallery').animate({
             opacity: 0
         }, 1000, function() {
-            // Animation complete.
 
-            $(".gallery").css("background-size", "contain").css("background-image", "url(" + imgURL + ")");
-            $(".gallery").animate({ opacity: 1 }, 1000);
+
+            $('.gallery').css('background-size', 'contain').css('background-image', 'url(' + imgURL + ')');
+            $('.gallery').animate({ opacity: 1 }, 1000);
         });
-     });
+    });
 
 
-// GO TO PREVIOUS IMAGE
-    $(".previous").click(function() {
-
-
-        var imgs = $(".curFilter");
-        var curImg = $(".curImg");
-        var pos = $(".curFilter").index(curImg);
-        var numPics = $(".curFilter").length;
-        var curImg = $(".curFilter")[pos]; //location of current image
-        var nextImg = $(".curFilter")[pos - 1]; //location of next image
+    // GO TO PREVIOUS IMAGE
+    $('button.previous').click(function() {
+        var imgs = $('.curFilter');
+        var curImg = $('.curImg');
+        var pos = $('.curFilter').index(curImg);
+        var numPics = $('.curFilter').length;
+        var curImg = $('.curFilter')[pos];
+        var nextImg = $('.curFilter')[pos - 1];
 
         //Loop current filter of photos
         if (pos > 0) {
-            $(curImg).removeClass("curImg"); //remove class current image
-            $(nextImg).addClass("curImg"); // add class to next image
+            $(curImg).removeClass('curImg');
+            $(nextImg).addClass('curImg');
         }
 
         else {
-            $(curImg).removeClass("curImg");
-            var pos = numPics - 1; // reset positon to last photo
-            nextImg = $(".curFilter")[pos];
-            $(nextImg).addClass("curImg");
+            $(curImg).removeClass('curImg');
+            var pos = numPics - 1;
+            nextImg = $('.curFilter')[pos];
+            $(nextImg).addClass('curImg');
         }
 
         if ($(window).width() < 960) {
-            imgURL = $(".curImg").attr('src').replace("/thumbs/", "/768px/")
+            imgURL = $('.curImg').attr('src').replace('/thumbs/', '/768px/')
         }
         else {
-            imgURL = $(".curImg").attr('src').replace("/thumbs/", "/1200px/")
+            imgURL = $('.curImg').attr('src').replace('/thumbs/', '/1200px/')
         }
 
-        $(".gallery").animate({
+        $('.gallery').animate({
             opacity: 0
         }, 1000, 'swing', function() {
-            // Animation complete.
-
-            $(".gallery").css("background-size", "contain").css("background-image", "url(" + imgURL + ")");
-            $(".gallery").animate({ opacity: 1 }, 1000, 'swing');
+            $('.gallery').css('background-size', 'contain').css('background-image', 'url(' + imgURL + ')');
+            $('.gallery').animate({ opacity: 1 }, 1000, 'swing');
         });
 
     });
