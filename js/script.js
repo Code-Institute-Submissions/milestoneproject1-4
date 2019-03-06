@@ -13,60 +13,64 @@ $(document).ready(function() {
     });
 
 
-    //Change opacity of thumbnails not related to current hovered filter
-    $('.filter button').hover(function() {
-        var filter = $(this).attr('id');
-
-        if (filter == 'all') {
-            $('.thumb').animate({ opacity: 1 }, 100)
-        }
-        else {
-            $('.thumb').not('.' + filter).animate({ opacity: 0.5 }, 100);
-        }
-    }, function() {
-        $('.thumb').animate({ opacity: 1 }, 100);
-    });
-
-
-    //Only display thumbnails selected by clicked filter
+    //Only display Photo/video/audio selected by clicked filter
     $('.filter button').click(function() {
         var filter = $(this).attr('id');
 
-
-        if (filter == 'all') {
+        if (filter == 'photo') {
             $('.gallery').css('background-image', 'none');
-            $('.thumb').css('display', 'block');
-            $('.thumb').addClass('curFilter');
-            $('.curFilter').css('display', 'block');
+            $('.photo').css('display', 'block');
+            $('.audio').css('display', 'none');
+            $('.video').css('display', 'none');
             $('.curImg').removeClass('curImg');
-            //$('.chevrons').css('display', 'none');
-            //$('.info').css('display', 'none');
             $('.gallery').css('height', '100%');
             $('.top').css('display', 'block');
             $('.scroll').css('display', 'none');
             $('.filter button').animate({ opacity: 1 }, 100);
+            $('.photo').addClass('curFilter')
+            $('.video').removeClass('curFilter')
+            $('.audio').removeClass('curFilter')
         }
-
-        else {
+        
+        if (filter == 'video') {
             $('.gallery').css('background-image', 'none');
-            $('.thumb').css('display', 'block');
-            $('.thumb').not('.' + filter).css('display', 'none');
-            $('.thumb').not('.' + filter).removeClass('curFilter');
-            $('.thumb').filter('.' + filter).addClass('curFilter');
+            $('.video').css('display', 'block');
+            $('.audio').css('display', 'none');
+            $('.photo').css('display', 'none');
             $('.curImg').removeClass('curImg');
             $('.gallery').css('height', '100%');
             $('.top').css('display', 'block');
             $('.scroll').css('display', 'none');
-            $('.filter button').not('#' + filter).animate({ opacity: 0.5 }, 100);
+            $('.filter button').animate({ opacity: 1 }, 100);
+            $('.video').addClass('curFilter')
+            $('.photo').removeClass('curFilter')
+            $('.audio').removeClass('curFilter')
         }
-
+        
+        if (filter == 'audio') {
+            $('.gallery').css('background-image', 'none');
+            $('.audio').css('display', 'block');
+            $('.video').css('display', 'none');
+            $('.photo').css('display', 'none');
+            $('.curImg').removeClass('curImg');
+            $('.gallery').css('height', '100%');
+            $('.top').css('display', 'block');
+            $('.scroll').css('display', 'none');
+            $('.filter button').animate({ opacity: 1 }, 100);
+            $('.audio').addClass('curFilter')
+            $('.video').removeClass('curFilter')
+            $('.photo').removeClass('curFilter')
+        }
+        
+        
+       
         //Fix footer to bottom when there are less than four thumbnails// 
-        numPics = $('img.curFilter').length;
+        numPics = $('.curFilter').length;
 
-        if (numPics < 5) {
+        if (numPics < 4) {
             $('.footer').addClass('navbar-fixed-bottom');
         }
-        else if (numPics > 4) {
+        else if (numPics > 3) {
             $('.footer').removeClass('navbar-fixed-bottom');
         }
     });
@@ -97,8 +101,6 @@ $(document).ready(function() {
         $('.gallery').css('height', '60vh');
         $('.top').css('display', 'none');
         $('.scroll').css('display', 'block');
-        //$('.close').css('display', 'block');
-        //$('.filter button.chevrons').css('display', 'inline-block');
         $('.gallery').css('background-size', 'contain').css('background-image', 'url(' + imgURL + ')')
         $('.footer').removeClass('navbar-fixed-bottom');
     });
@@ -111,8 +113,6 @@ $(document).ready(function() {
         $('.thumb').addClass('curFilter');
         $('.curFilter').css('display', 'block');
         $('.curImg').removeClass('curImg');
-       // $('.chevrons').css('display', 'none');
-        //$('.info').css('display', 'none');
         $('.gallery').css('height', '100%');
         $('.top').css('display', 'block');
         $('.scroll').css('display', 'none');

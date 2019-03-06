@@ -57,17 +57,17 @@ The following websites links were used to help with coding:
 [full-screen-background-image-sizes-for-web-design](https://www.webmalama.com/the-best-full-screen-background-image-sizes-for-web-design/)
 [get-index-of-clicked-element-in-collection-with-jquery get index of selector](https://stackoverflow.com/questions/5545283/get-index-of-clicked-element-in-collection-with-jquery get index of selector)
 [how-to-change-image-opacity-on.html Hover on thumbnails](http://www.jquerybyexample.net/2012/05/how-to-change-image-opacity-on.html Hover on thumbnails)
-[contact-form-in-bootstrap-modal](Modal: http://reusableforms.com/d/p4/contact-form-in-bootstrap-modal)
+[contact-form-in-bootstrap-modal](http://reusableforms.com/d/p4/contact-form-in-bootstrap-modal)
 [bootstrap modal](https://www.w3schools.com/bootstrap/bootstrap_modal.asp)
 [blur filter css](https://stackoverflow.com/questions/20039765/how-to-apply-a-css-3-blur-filter-to-a-background-image)
 [keeping-a-navbar-ul-horizontal-on-small-screens](https://stackoverflow.com/questions/22385680/keeping-a-navbar-ul-horizontal-on-small-screens)
-[Template Readme]()
+[Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+[Readme sample](https://code-institute-room.slack.com/files/U2D6L9DSS/F8X75A2V7/readme_md_sample.md)
 
-[AUDIO Files] (zapslat.com)
 
 ### Credits
 
 ## Media
-- The photos used in this site are made by Daniel van Duinkerken
+- The photos and videos used onn this site are made by Daniel van Duinkerken. Audio files were downloaded from zapslat.com
 
 
