@@ -47,7 +47,6 @@ This website provides people with a portfolio of Daniel van Duinkerken's work, b
 - Site viewed and tested in the following browsers:
   - Google Chrome
   - Opera
-  - Microsoft Edge
   - Mozilla Firefox
   - Safari
 
